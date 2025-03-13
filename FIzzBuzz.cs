@@ -8,29 +8,33 @@ namespace FizzBuzz
 {
     class FizzBuzz
     {
+    string result;
         public string CheckNumber()
         {
             var number = GetNumber();
+            
+
             if (number % 3 == 0 && number % 5 == 0)
             {
-                Console.WriteLine("FizzBuzz");
+                result = "FizzBuzz";
             }
-            else (number % 3 == 0)
+            else if (number % 3 == 0)
             {
-                Console.WriteLine("Fizz");
+                result = "Fizz";
             }
-            else (number % 5 == 0)
+            else if (number % 5 == 0)
             {
-                Console.WriteLine("Buzz");
+                result = "Buzz";
             }
             else
             {
-                Console.WriteLine(number);
+                result = Convert.ToString(result);
             }
+            return result;
         }
         private int GetNumber()
         {
-            Console.WriteLine("Podaj liczbę")
+            Console.WriteLine("Podaj liczbę");
             while (true)
             {
                 if (!int.TryParse(Console.ReadLine(), out int input))
@@ -38,8 +42,10 @@ namespace FizzBuzz
                     Console.WriteLine("Podana wartość nie jest liczbą, Spróbuj ponownie");
                     continue;
                 }
-                
+
                 return input;
             }
         }
+
+    }
 }

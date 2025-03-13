@@ -10,6 +10,9 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
+            var FizzBuzz = new FizzBuzz();
+            var result = FizzBuzz.CheckNumber();
+            Console.WriteLine(result);
         }
     }
 }
