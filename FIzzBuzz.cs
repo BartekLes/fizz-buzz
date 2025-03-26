@@ -28,7 +28,7 @@ namespace FizzBuzz
             }
             else
             {
-                result = Convert.ToString(result);
+                result = number.ToString();
             }
             return result;
         }
