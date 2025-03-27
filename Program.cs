@@ -15,8 +15,18 @@ namespace FizzBuzz
             bool continuation;
             do
             {
-                var result = FizzBuzz.CheckNumber();
-                Console.WriteLine(result);
+                Console.WriteLine("Podaj liczbę");
+                while (true)
+                {
+                    if (!int.TryParse(Console.ReadLine(), out int input))
+                    {
+                        Console.WriteLine("Podana wartość nie jest liczbą, Spróbuj ponownie");
+                        continue;
+                    }
+                    var result = FizzBuzz.CheckNumber(input);
+                    Console.WriteLine(result);
+                    break;
+                }
                 Console.WriteLine("Wprowadź 'K' by zakończyć, lub inny znak by kontunuować");
                 answer = Console.ReadLine();
                 if (answer == "K")
@@ -28,7 +38,8 @@ namespace FizzBuzz
                     continuation = true;
                 }
 
-            } while (continuation);
+            } 
+            while (continuation);
 
         }
 

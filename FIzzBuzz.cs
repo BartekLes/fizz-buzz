@@ -8,11 +8,9 @@ namespace FizzBuzz
 {
     class FizzBuzz
     {
-    string result;
-        public string CheckNumber()
+        public string CheckNumber(int number)
         {
-            var number = GetNumber();
-            
+            string result;
 
             if (number % 3 == 0 && number % 5 == 0)
             {
@@ -32,20 +30,5 @@ namespace FizzBuzz
             }
             return result;
         }
-        private int GetNumber()
-        {
-            Console.WriteLine("Podaj liczbę");
-            while (true)
-            {
-                if (!int.TryParse(Console.ReadLine(), out int input))
-                {
-                    Console.WriteLine("Podana wartość nie jest liczbą, Spróbuj ponownie");
-                    continue;
-                }
-
-                return input;
-            }
-        }
-
     }
 }
